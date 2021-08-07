@@ -57,3 +57,5 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name SYSTEMVERILOG_FILE chu_gpo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_timer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_mmio_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE chu_gpi.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mmio_sys_vanilla.sv
