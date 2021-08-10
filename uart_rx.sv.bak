@@ -1,0 +1,22 @@
+module uart_rx
+#(
+      parameter DBIT = 8,    // num data bits
+                SB_TICK = 16 // num ticks for stop bits
+)
+(
+      input  logic clk, reset
+      input  logic rx, s_tick,
+      output logic rx_done_tick,
+      output logic [7:0] dout
+);
+
+// fsm state type
+typedef enum {idle, start, data, stop} state_type;
+
+// sig declarations
+state_type state_reg, state_next;
+logic [3:0] s_reg, s_next;
+logic [2:0] n_reg, n_next;
+logic [7:0] b_reg, b_next;
+
+endmodule

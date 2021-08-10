@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY FPRO_System
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "20.1.0 SP0.08STD"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:49:11  AUGUST 03, 2021"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 SP0.08std Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -59,3 +59,12 @@ set_global_assignment -name SYSTEMVERILOG_FILE chu_timer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_mmio_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_gpi.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mmio_sys_vanilla.sv
+set_global_assignment -name SYSTEMVERILOG_FILE FPRO_System.sv
+set_global_assignment -name SYSTEMVERILOG_FILE baud_gen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE uart_rx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE uart_tx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE fifoController.sv
+set_global_assignment -name SYSTEMVERILOG_FILE reg_file.sv
+set_global_assignment -name SYSTEMVERILOG_FILE fifo.sv
+set_global_assignment -name SYSTEMVERILOG_FILE uart.sv
+set_global_assignment -name SYSTEMVERILOG_FILE chu_uart.sv

@@ -11,7 +11,6 @@ module mmio_sys_vanilla
       input  logic reset,
       input  logic mmio_cs,
       input  logic mmio_wr,
-      input  logic mmio_wr,
       input  logic mmio_rd,
       input  logic [20:0] mmio_addr,
       input  logic [31:0] mmio_wr_data,
@@ -60,8 +59,7 @@ chu_timer timer_slot0
 );
 
 // slot 1: UART
-// not yet implemented
-/*
+chu_uart uart_slot1
 (
 		.clk(clk),
 		.reset(reset),
@@ -74,7 +72,6 @@ chu_timer timer_slot0
 		.tx(tx),
 		.rx(rx)
 );
-*/
 //assign rd_data_array[1] = 32'h0;
 
 chu_gpo #(.W(N_LED)) gpo_slot2
