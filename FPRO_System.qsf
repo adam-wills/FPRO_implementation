@@ -68,3 +68,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE reg_file.sv
 set_global_assignment -name SYSTEMVERILOG_FILE fifo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE uart.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_uart.sv
+set_global_assignment -name SYSTEMVERILOG_FILE avalon_to_fpro_bridge.sv
