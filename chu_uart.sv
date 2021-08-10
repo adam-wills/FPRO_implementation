@@ -12,8 +12,8 @@ module chu_uart
       input  logic [4:0]  addr,
       input  logic [31:0] wr_data,
       output logic [31:0] rd_data,
-		output logic tx,
-		output logic rx
+      output logic tx,
+      output logic rx
 );
 
 // signal declarations
