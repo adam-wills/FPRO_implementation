@@ -14,7 +14,6 @@ module fifoController
 	logic [AW-1:0] r_ptr_logic, r_ptr_next, r_ptr_succ;
 	logic full_logic, empty_logic, full_next, empty_next;
 	
-	
 	// status/r&w ptr regs
 	always_ff @ (posedge clk) begin
 		if (reset) begin
