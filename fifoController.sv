@@ -30,10 +30,12 @@ module fifoController
 		end
 	end
 	
+    //next-state
 	always_comb begin
 		//successive pointers
 		w_ptr_succ = w_ptr_logic+1;
 		r_ptr_succ = r_ptr_logic+1;
+        
 		// defaults: no change
 		w_ptr_next = w_ptr_logic
 		r_ptr_next = r_ptr_logic;
