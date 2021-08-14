@@ -14,7 +14,6 @@ module fifoController
 	logic [AW-1:0] r_ptr_logic, r_ptr_next, r_ptr_succ;
 	logic full_logic, empty_logic, full_next, empty_next;
 	
-	
 	// status/r&w ptr regs
 	always_ff @ (posedge clk) begin
 		if (reset) begin
@@ -31,10 +30,12 @@ module fifoController
 		end
 	end
 	
+    //next-state
 	always_comb begin
 		//successive pointers
 		w_ptr_succ = w_ptr_logic+1;
 		r_ptr_succ = r_ptr_logic+1;
+        
 		// defaults: no change
 		w_ptr_next = w_ptr_logic;
 		r_ptr_next = r_ptr_logic;
