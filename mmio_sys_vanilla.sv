@@ -1,4 +1,3 @@
-'include "chu_io_map.svh"
 
 module mmio_sys_vanilla
 #(
@@ -14,7 +13,7 @@ module mmio_sys_vanilla
       input  logic mmio_rd,
       input  logic [20:0] mmio_addr,
       input  logic [31:0] mmio_wr_data,
-      input  logic [31:0] mmio_rd_data,
+      output logic [31:0] mmio_rd_data,
       // switches and LEDs
       input  logic [N_SW-1:0]  sw,
       output logic [N_LED-1:0] led,
@@ -24,6 +23,11 @@ module mmio_sys_vanilla
 );
 
 // declarations
+localparam S0_SYS_TIMER = 0;
+localparam S1_UART1     = 1;
+localparam S2_LED       = 2;
+localparam S3_SW        = 3;
+
 logic [63:0] mem_rd_array;
 logic [63:0] mem_wr_array;
 logic [63:0] cs_array;
@@ -50,12 +54,12 @@ chu_timer timer_slot0
 (
 		.clk(clk),
 		.reset(reset),
-		.cs(cs_array['S0_SYS_TIMER]),
-		.read(mem_rd_array['S0_SYS_TIMER]),
-		.write(mem_wr_array['S0_SYS_TIMER]),
-		.addr(reg_addr_array['S0_SYS_TIMER]),
-		.rd_data(rd_data_array['S0_SYS_TIMER]),
-		.wr_data(wr_data_array['S0_SYS_TIMER])
+		.cs(cs_array[S0_SYS_TIMER]),
+		.read(mem_rd_array[S0_SYS_TIMER]),
+		.write(mem_wr_array[S0_SYS_TIMER]),
+		.addr(reg_addr_array[S0_SYS_TIMER]),
+		.rd_data(rd_data_array[S0_SYS_TIMER]),
+		.wr_data(wr_data_array[S0_SYS_TIMER])
 );
 
 // slot 1: UART
@@ -63,12 +67,12 @@ chu_uart uart_slot1
 (
 		.clk(clk),
 		.reset(reset),
-		.cs(cs_array['S1_UART1]),
-		.read(mem_rd_array['S1_UART1]),
-		.write(mem_wr_array['S1_UART1]),
-		.addr(reg_addr_array['S1_UART1]),
-		.rd_data(rd_data_array['S1_UART1]),
-		.wr_data(wr_data_array['S1_UART1]),
+		.cs(cs_array[S1_UART1]),
+		.read(mem_rd_array[S1_UART1]),
+		.write(mem_wr_array[S1_UART1]),
+		.addr(reg_addr_array[S1_UART1]),
+		.rd_data(rd_data_array[S1_UART1]),
+		.wr_data(wr_data_array[S1_UART1]),
 		.tx(tx),
 		.rx(rx)
 );
@@ -78,12 +82,12 @@ chu_gpo #(.W(N_LED)) gpo_slot2
 (
 		.clk(clk),
 		.reset(reset),
-		.cs(cs_array['S2_LED]),
-		.read(mem_rd_array['S2_LED]),
-		.write(mem_wr_array['S2_LED]),
-		.addr(reg_addr_array['S2_LED]),
-		.rd_data(rd_data_array['S2_LED]),
-		.wr_data(wr_data_array['S2_LED]),
+		.cs(cs_array[S2_LED]),
+		.read(mem_rd_array[S2_LED]),
+		.write(mem_wr_array[S2_LED]),
+		.addr(reg_addr_array[S2_LED]),
+		.rd_data(rd_data_array[S2_LED]),
+		.wr_data(wr_data_array[S2_LED]),
 		.dout(led)
 );
 
@@ -92,12 +96,12 @@ chu_gpi #(.W(N_SW)) gpi_slot3
 (
 		.clk(clk),
 		.reset(reset),
-		.cs(cs_array['S3_SW]),
-		.read(mem_rd_array['S3_SW]),
-		.write(mem_wr_array['S3_SW]),
-		.addr(reg_addr_array['S3_SW]),
-		.rd_data(rd_data_array['S3_SW]),
-		.wr_data(wr_data_array['S3_SW]),
+		.cs(cs_array[S3_SW]),
+		.read(mem_rd_array[S3_SW]),
+		.write(mem_wr_array[S3_SW]),
+		.addr(reg_addr_array[S3_SW]),
+		.rd_data(rd_data_array[S3_SW]),
+		.wr_data(wr_data_array[S3_SW]),
 		.din(sw)
 );
 

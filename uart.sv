@@ -14,7 +14,7 @@ module uart
 );
 
 // sig declarations
-logic tick, rx_done_s_tick, tx_done_tick;
+logic tick, rx_done_tick, tx_done_tick;
 logic tx_empty, tx_fifo_not_empty;
 logic [7:0] tx_fifo_out, rx_data_out;
 
@@ -37,7 +37,7 @@ uart_tx #(.DBIT(DBIT), .SB_TICK(SB_TICK)) uart_tx_unit
 
 fifo #(.DW(DBIT), .AW(FIFO_W)) fifo_rx_unit
 (
-      .*
+      .*,
       .rd(rd_uart),
       .wr(wr_done_tick),
       .w_data(rx_data_out),
@@ -48,7 +48,7 @@ fifo #(.DW(DBIT), .AW(FIFO_W)) fifo_rx_unit
 
 fifo #(.DW(DBIT), .AW(FIFO_W)) fifo_tx_unit
 (
-      .*
+      .*,
       .rd(tx_done_tick),
       .wr(wr_uart),
       .w_data(w_data),

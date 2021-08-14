@@ -10,11 +10,13 @@ module avalon_to_fpro_bridge
       input  logic write,
       input  logic chipselect,
       input  logic [3:0] byteenable,
-      input  logic [31:0] address,
+      input  logic [31:0] address,  // pretty sure this address width is generating the error (??)
       input  logic [31:0] writedata,
 		output logic [31:0] readdata,
 		// fpro bus
       input  logic [31:0] fp_rd_data,
+		output logic clk_out,
+		output logic reset_out,
       output logic [31:0] fp_wr_data,
 		output logic [20:0] fp_addr,
       output logic fp_wr,
@@ -26,12 +28,12 @@ module avalon_to_fpro_bridge
 	// signal declarations
 	logic mcs_bridge_en;
 	logic [29:0] word_addr;
-	logic [31:0] byte_mask[4];
 	logic [31:0] mask = 32'h0000_0000;
 
 	// address translation/decoding
 	// LSBs are '00' due to word alignment
-	// (again probably something i'll need to change)
+	assign clk_out = clk;
+	assign reset_out = reset;
 	assign word_addr = address[31:2];
 	assign mcs_bridge_en = (address[31:24] == BRG_BASE[31:24]);
 	assign fp_video_cs = (chipselect && mcs_bridge_en && address[23] == 1);

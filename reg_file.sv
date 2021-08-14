@@ -16,6 +16,6 @@ always_ff @(posedge clk)
    if (wr_en)
       array_reg[w_addr] <= w_data;
 
-assign r_data = array_reg[r_addr]
+assign r_data = array_reg[r_addr];
 
 endmodule

@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY FPRO_System
+set_global_assignment -name TOP_LEVEL_ENTITY mcs_top_vanilla
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "20.1.0 SP0.08STD"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:49:11  AUGUST 03, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -54,12 +54,18 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name IP_SEARCH_PATHS "c:\\users\\augh\\documents\\fpro"
+set_global_assignment -name QIP_FILE fpro/synthesis/fpro.qip
 set_global_assignment -name SYSTEMVERILOG_FILE chu_gpo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_timer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_mmio_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_gpi.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mmio_sys_vanilla.sv
-set_global_assignment -name SYSTEMVERILOG_FILE FPRO_System.sv
 set_global_assignment -name SYSTEMVERILOG_FILE baud_gen.sv
 set_global_assignment -name SYSTEMVERILOG_FILE uart_rx.sv
 set_global_assignment -name SYSTEMVERILOG_FILE uart_tx.sv
@@ -69,3 +75,5 @@ set_global_assignment -name SYSTEMVERILOG_FILE fifo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE uart.sv
 set_global_assignment -name SYSTEMVERILOG_FILE chu_uart.sv
 set_global_assignment -name SYSTEMVERILOG_FILE avalon_to_fpro_bridge.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mcs_top_vanilla.sv
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

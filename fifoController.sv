@@ -36,7 +36,7 @@ module fifoController
 		w_ptr_succ = w_ptr_logic+1;
 		r_ptr_succ = r_ptr_logic+1;
 		// defaults: no change
-		w_ptr_next = w_ptr_logic
+		w_ptr_next = w_ptr_logic;
 		r_ptr_next = r_ptr_logic;
 		full_next  = full_logic;
 		empty_next = empty_logic;

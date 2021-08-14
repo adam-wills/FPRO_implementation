@@ -4,7 +4,7 @@ module uart_rx
                 SB_TICK = 16 // num ticks for stop bits
 )
 (
-      input  logic clk, reset
+      input  logic clk, reset,
       input  logic rx, s_tick,
       output logic rx_done_tick,
       output logic [7:0] dout

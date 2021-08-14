@@ -5,11 +5,10 @@ module chu_mmio_controller
       input  logic reset,
       input  logic mmio_cs,
       input  logic mmio_wr,
-      input  logic mmio_wr,
       input  logic mmio_rd,
       input  logic [20:0] mmio_addr,
       input  logic [31:0] mmio_wr_data,
-      input  logic [31:0] mmio_rd_data,
+      output logic [31:0] mmio_rd_data,
       // slot interface
 		input  logic [31:0] slot_rd_data_array [63:0],
 		output logic [31:0] slot_wr_data_array [63:0],

@@ -8,7 +8,7 @@ module uart_tx
       input  logic tx_start, s_tick,
       input  logic [7:0] din,
       output logic tx_done_tick,
-      output logic tx;
+      output logic tx
 );
 
 // fsm state type
