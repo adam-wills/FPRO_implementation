@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Aug 14 17:03:36 2021
+Analysis & Synthesis Status : Successful - Sat Aug 14 18:03:16 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : FPRO_System
 Top-level Entity Name : mcs_top_vanilla
 Family : MAX 10
-Total logic elements : 3,144
-    Total combinational functions : 2,432
-    Dedicated logic registers : 1,868
-Total registers : 1868
+Total logic elements : 2,904
+    Total combinational functions : 2,218
+    Dedicated logic registers : 1,755
+Total registers : 1755
 Total pins : 112
 Total virtual pins : 0
 Total memory bits : 12,416

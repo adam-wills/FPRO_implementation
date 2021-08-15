@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="fpro" kind="fpro" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2021.08.14.17:00:43 -->
+ <!-- 2021.08.14.18:00:17 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1628985643</value>
+  <value>1628989217</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -98,7 +98,7 @@
  <module
    name="avalon_to_fpro_bridge_0"
    kind="avalon_to_fpro_bridge"
-   version="1.1"
+   version="1.2"
    path="avalon_to_fpro_bridge_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -707,7 +707,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>30</width>
+    <width>32</width>
     <role>address</role>
    </port>
    <port>
@@ -8397,7 +8397,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1628985643</value>
+   <value>1628989217</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -8417,7 +8417,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1628985643</value>
+   <value>1628989217</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -8433,7 +8433,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1628985643</value>
+   <value>1628989217</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -9967,7 +9967,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Avalon-MM to FPRO Bridge</displayName>
-  <version>1.1</version>
+  <version>1.2</version>
  </plugin>
  <plugin>
   <instanceCount>6</instanceCount>

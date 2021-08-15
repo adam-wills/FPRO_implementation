@@ -1,5 +1,5 @@
 Flow report for FPRO_System
-Sat Aug 14 17:03:36 2021
+Sat Aug 14 18:03:51 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,24 +40,24 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Aug 14 17:03:36 2021       ;
+; Flow Status                        ; Assembler Failed - Sat Aug 14 18:03:51 2021 ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; FPRO_System                                 ;
 ; Top-level Entity Name              ; mcs_top_vanilla                             ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,144                                       ;
-;     Total combinational functions  ; 2,432                                       ;
-;     Dedicated logic registers      ; 1,868                                       ;
-; Total registers                    ; 1868                                        ;
-; Total pins                         ; 112                                         ;
+; Total logic elements               ; 2,717 / 49,760 ( 5 % )                      ;
+;     Total combinational functions  ; 2,238 / 49,760 ( 4 % )                      ;
+;     Dedicated logic registers      ; 1,720 / 49,760 ( 3 % )                      ;
+; Total registers                    ; 1789                                        ;
+; Total pins                         ; 112 / 360 ( 31 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 12,416                                      ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total memory bits                  ; 12,416 / 1,677,312 ( < 1 % )                ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/14/2021 17:03:02 ;
+; Start date & time ; 08/14/2021 18:02:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPRO_System         ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+--------------------------------------------------------+---------------+-----------------+-----------------------------------+
 ; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name     ; Section Id                        ;
 +-------------------------------------+--------------------------------------------------------+---------------+-----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 178780615904087.162898578210944                        ; --            ; --              ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 178780615904087.162898936103068                        ; --            ; --              ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                    ; --            ; --              ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                    ; --            ; --              ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                    ; --            ; --              ; eda_board_design_signal_integrity ;
@@ -98,7 +98,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --              ; --                                ;
 ; SLD_FILE                            ; fpro/synthesis/fpro.regmap                             ; --            ; --              ; --                                ;
 ; SLD_FILE                            ; fpro/synthesis/fpro.debuginfo                          ; --            ; --              ; --                                ;
-; SLD_INFO                            ; QSYS_NAME fpro HAS_SOPCINFO 1 GENERATION_ID 1628985643 ; --            ; fpro            ; --                                ;
+; SLD_INFO                            ; QSYS_NAME fpro HAS_SOPCINFO 1 GENERATION_ID 1628989217 ; --            ; fpro            ; --                                ;
 ; SOPCINFO_FILE                       ; fpro/synthesis/../../fpro.sopcinfo                     ; --            ; --              ; --                                ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --              ; --                                ;
 ; TOP_LEVEL_ENTITY                    ; mcs_top_vanilla                                        ; FPRO_System   ; --              ; --                                ;
@@ -110,8 +110,10 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:32     ; 1.0                     ; 4906 MB             ; 00:00:53                           ;
-; Total                ; 00:00:32     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 4897 MB             ; 00:00:56                           ;
+; Fitter               ; 00:00:29     ; 1.2                     ; 5689 MB             ; 00:00:41                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4688 MB             ; 00:00:03                           ;
+; Total                ; 00:01:05     ; --                      ; --                  ; 00:01:40                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -121,6 +123,8 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-OT4JLP6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-OT4JLP6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-OT4JLP6  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -128,6 +132,8 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off FPRO_System -c FPRO_System
+quartus_fit --read_settings_files=off --write_settings_files=off FPRO_System -c FPRO_System
+quartus_asm --read_settings_files=off --write_settings_files=off FPRO_System -c FPRO_System
 
 
 

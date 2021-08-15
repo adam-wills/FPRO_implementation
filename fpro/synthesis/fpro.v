@@ -42,7 +42,7 @@ module fpro (
 	wire         nios2_gen2_0_instruction_master_read;                                     // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_chipselect; // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_chipselect -> avalon_to_fpro_bridge_0:chipselect
 	wire  [31:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_readdata;   // avalon_to_fpro_bridge_0:readdata -> mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_readdata
-	wire  [29:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_address;    // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_address -> avalon_to_fpro_bridge_0:address
+	wire  [31:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_address;    // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_address -> avalon_to_fpro_bridge_0:address
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_read;       // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_read -> avalon_to_fpro_bridge_0:read
 	wire   [3:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_byteenable; // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_byteenable -> avalon_to_fpro_bridge_0:byteenable
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_write;      // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_write -> avalon_to_fpro_bridge_0:write

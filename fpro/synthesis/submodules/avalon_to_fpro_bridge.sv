@@ -10,7 +10,7 @@ module avalon_to_fpro_bridge
       input  logic write,
       input  logic chipselect,
       input  logic [3:0] byteenable,
-      input  logic [29:0] address,  // pretty sure this address width is generating the error (??)
+      input  logic [31:0] address,  // pretty sure this address width is generating the error (??)
       input  logic [31:0] writedata,
 		output logic [31:0] readdata,
 		// fpro bus
@@ -27,22 +27,22 @@ module avalon_to_fpro_bridge
 
 	// signal declarations
 	logic mcs_bridge_en;
-	//logic [29:0] word_addr;
+	logic [29:0] word_addr;
 	logic [31:0] mask = 32'h0000_0000;
 
 	// address translation/decoding
 	// LSBs are '00' due to word alignment
 	assign clk_out = clk;
 	assign reset_out = reset;
-	//assign word_addr = address[31:2];
-	//assign mcs_bridge_en = (address[31:24] == BRG_BASE[31:24]);
-	assign mcs_bridge_en = (address[29:24] == BRG_BASE[29:24]);
-	//assign fp_video_cs = (chipselect && mcs_bridge_en && address[23] == 1);
-	//assign fp_mmio_cs = (chipselect && mcs_bridge_en && address[23] == 0);
-		assign fp_video_cs = (chipselect && mcs_bridge_en && address[21] == 1);
-	assign fp_mmio_cs = (chipselect && mcs_bridge_en && address[21] == 0);
-	//assign fp_addr = word_addr[20:0];
-	assign fp_addr = address[20:0];
+	assign word_addr = address[31:2];
+	assign mcs_bridge_en = (address[31:24] == BRG_BASE[31:24]);
+	//assign mcs_bridge_en = (address[29:24] == BRG_BASE[29:24]);
+	assign fp_video_cs = (chipselect && mcs_bridge_en && address[23] == 1);
+	assign fp_mmio_cs = (chipselect && mcs_bridge_en && address[23] == 0);
+	//assign fp_video_cs = (chipselect && mcs_bridge_en && address[21] == 1);
+	//assign fp_mmio_cs = (chipselect && mcs_bridge_en && address[21] == 0);
+	assign fp_addr = word_addr[20:0];
+	//assign fp_addr = address[20:0];
 
 
 	// control-line conversion
