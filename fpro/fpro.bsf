@@ -47,8 +47,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 112)
 		(output)
-		(text "fp_address_conduit[20..0]" (rect 0 0 103 12)(font "Arial" (font_size 8)))
-		(text "fp_address_conduit[20..0]" (rect 4 101 154 112)(font "Arial" (font_size 8)))
+		(text "fp_addr_conduit[20..0]" (rect 0 0 89 12)(font "Arial" (font_size 8)))
+		(text "fp_addr_conduit[20..0]" (rect 4 101 136 112)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 144 112)(line_width 3))
 	)
 	(port
@@ -173,7 +173,7 @@ refer to the applicable agreement for further details.
 	(drawing
 		(text "clk" (rect 129 43 276 99)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "clk" (rect 149 67 316 144)(font "Arial" (color 0 0 0)))
-		(text "fp_address" (rect 78 83 216 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "fp_addr" (rect 99 83 240 179)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "conduit" (rect 149 107 340 224)(font "Arial" (color 0 0 0)))
 		(text "fp_clk" (rect 225 43 486 99)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "clk" (rect 209 67 436 144)(font "Arial" (color 0 0 0)))

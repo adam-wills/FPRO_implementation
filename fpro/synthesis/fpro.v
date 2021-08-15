@@ -5,7 +5,7 @@
 `timescale 1 ps / 1 ps
 module fpro (
 		input  wire        clk_clk,              //          clk.clk
-		output wire [20:0] fp_address_conduit,   //   fp_address.conduit
+		output wire [20:0] fp_addr_conduit,      //      fp_addr.conduit
 		output wire        fp_clk_clk,           //       fp_clk.clk
 		output wire        fp_mmio_cs_conduit,   //   fp_mmio_cs.conduit
 		output wire        fp_read_conduit,      //      fp_read.conduit
@@ -42,7 +42,7 @@ module fpro (
 	wire         nios2_gen2_0_instruction_master_read;                                     // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_chipselect; // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_chipselect -> avalon_to_fpro_bridge_0:chipselect
 	wire  [31:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_readdata;   // avalon_to_fpro_bridge_0:readdata -> mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_readdata
-	wire  [31:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_address;    // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_address -> avalon_to_fpro_bridge_0:address
+	wire  [29:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_address;    // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_address -> avalon_to_fpro_bridge_0:address
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_read;       // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_read -> avalon_to_fpro_bridge_0:read
 	wire   [3:0] mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_byteenable; // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_byteenable -> avalon_to_fpro_bridge_0:byteenable
 	wire         mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_write;      // mm_interconnect_0:avalon_to_fpro_bridge_0_avalon_MM_interface_write -> avalon_to_fpro_bridge_0:write
@@ -90,7 +90,7 @@ module fpro (
 	) avalon_to_fpro_bridge_0 (
 		.clk         (clk_clk),                                                                  //               clock.clk
 		.reset       (rst_controller_reset_out_reset),                                           //               reset.reset
-		.clock_out   (fp_clk_clk),                                                               //           clock_out.clk
+		.clk_out     (fp_clk_clk),                                                               //           clock_out.clk
 		.reset_out   (fp_rst_reset),                                                             //        reset_source.reset
 		.read        (mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_read),       // avalon_MM_interface.read
 		.write       (mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_write),      //                    .write
@@ -101,7 +101,7 @@ module fpro (
 		.readdata    (mm_interconnect_0_avalon_to_fpro_bridge_0_avalon_mm_interface_readdata),   //                    .readdata
 		.fp_rd_data  (fp_readdata_conduit),                                                      //          fp_rd_data.conduit
 		.fp_wr_data  (fp_writedata_conduit),                                                     //          fp_wr_data.conduit
-		.fp_addr     (fp_address_conduit),                                                       //             fp_addr.conduit
+		.fp_addr     (fp_addr_conduit),                                                          //             fp_addr.conduit
 		.fp_wr       (fp_write_conduit),                                                         //               fp_wr.conduit
 		.fp_rd       (fp_read_conduit),                                                          //               fp_rd.conduit
 		.fp_mmio_cs  (fp_mmio_cs_conduit),                                                       //          fp_mmio_cs.conduit

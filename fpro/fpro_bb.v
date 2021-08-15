@@ -16,7 +16,7 @@ module fpro (
 	fp_rst_reset,
 	fp_readdata_conduit,
 	fp_writedata_conduit,
-	fp_address_conduit,
+	fp_addr_conduit,
 	fp_write_conduit,
 	fp_read_conduit,
 	fp_mmio_cs_conduit,
@@ -38,7 +38,7 @@ module fpro (
 	output		fp_rst_reset;
 	input	[31:0]	fp_readdata_conduit;
 	output	[31:0]	fp_writedata_conduit;
-	output	[20:0]	fp_address_conduit;
+	output	[20:0]	fp_addr_conduit;
 	output		fp_write_conduit;
 	output		fp_read_conduit;
 	output		fp_mmio_cs_conduit;

@@ -16,7 +16,7 @@
 			fp_rst_reset         : out   std_logic;                                        -- reset
 			fp_readdata_conduit  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- conduit
 			fp_writedata_conduit : out   std_logic_vector(31 downto 0);                    -- conduit
-			fp_address_conduit   : out   std_logic_vector(20 downto 0);                    -- conduit
+			fp_addr_conduit      : out   std_logic_vector(20 downto 0);                    -- conduit
 			fp_write_conduit     : out   std_logic;                                        -- conduit
 			fp_read_conduit      : out   std_logic;                                        -- conduit
 			fp_mmio_cs_conduit   : out   std_logic;                                        -- conduit
@@ -42,7 +42,7 @@
 			fp_rst_reset         => CONNECTED_TO_fp_rst_reset,         --       fp_rst.reset
 			fp_readdata_conduit  => CONNECTED_TO_fp_readdata_conduit,  --  fp_readdata.conduit
 			fp_writedata_conduit => CONNECTED_TO_fp_writedata_conduit, -- fp_writedata.conduit
-			fp_address_conduit   => CONNECTED_TO_fp_address_conduit,   --   fp_address.conduit
+			fp_addr_conduit      => CONNECTED_TO_fp_addr_conduit,      --      fp_addr.conduit
 			fp_write_conduit     => CONNECTED_TO_fp_write_conduit,     --     fp_write.conduit
 			fp_read_conduit      => CONNECTED_TO_fp_read_conduit,      --      fp_read.conduit
 			fp_mmio_cs_conduit   => CONNECTED_TO_fp_mmio_cs_conduit,   --   fp_mmio_cs.conduit

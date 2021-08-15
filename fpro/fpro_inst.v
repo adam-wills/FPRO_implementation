@@ -15,7 +15,7 @@
 		.fp_rst_reset         (<connected-to-fp_rst_reset>),         //       fp_rst.reset
 		.fp_readdata_conduit  (<connected-to-fp_readdata_conduit>),  //  fp_readdata.conduit
 		.fp_writedata_conduit (<connected-to-fp_writedata_conduit>), // fp_writedata.conduit
-		.fp_address_conduit   (<connected-to-fp_address_conduit>),   //   fp_address.conduit
+		.fp_addr_conduit      (<connected-to-fp_addr_conduit>),      //      fp_addr.conduit
 		.fp_write_conduit     (<connected-to-fp_write_conduit>),     //     fp_write.conduit
 		.fp_read_conduit      (<connected-to-fp_read_conduit>),      //      fp_read.conduit
 		.fp_mmio_cs_conduit   (<connected-to-fp_mmio_cs_conduit>),   //   fp_mmio_cs.conduit

@@ -1,7 +1,7 @@
 	component fpro is
 		port (
 			clk_clk              : in    std_logic                     := 'X';             -- clk
-			fp_address_conduit   : out   std_logic_vector(20 downto 0);                    -- conduit
+			fp_addr_conduit      : out   std_logic_vector(20 downto 0);                    -- conduit
 			fp_clk_clk           : out   std_logic;                                        -- clk
 			fp_mmio_cs_conduit   : out   std_logic;                                        -- conduit
 			fp_read_conduit      : out   std_logic;                                        -- conduit
